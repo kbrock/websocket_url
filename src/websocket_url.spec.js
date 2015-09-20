@@ -2,6 +2,10 @@
 
 describe("WebsocketUrl", function() {
   'use strict';
+  // we only care about browsers if there is web socket support
+  it("should Support websockets", function() {
+    expect(typeof(WebSocket)).toEqual("function");
+  });
   it("should understand absolute http urls", function() {
     expect(websocketUrl("http://example.com/sub/")).toEqual("ws://example.com/sub/");
   });
