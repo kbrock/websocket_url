@@ -3,8 +3,10 @@ node_js:
 - "0.12"
 addons:
   sauce_connect: true
-#install:
-#  - npm install -g grunt-cli
+# can we call this install
+# can we do sudo: false
+before_script:
+  - npm install -g grunt-cli
 env:
   global:
   - secure: Y/0d5+/0Rn4f3/9gdDo4ihbI75Iousn74UGmiDg1HfeX8Mp/Nwj/5ZGgMSLN2Uk0E/3S5F60oV51N7QTvis7nNPc+aPUUpeIuBUoqczvAEraogOFtAh1Lq6GdDhps/09Dx0hpmQ8bkCHrqfULbBpxGjDVRyA+o1PMyiKdTRkhiYunssaRkUKktK4yhmzv2EprV6EMud/+hyYRpZvcs4E+BiCKT3jDk5SdC6is2tWvOyJdM446x03AJzISfTJfb0TC7miC8SaY/O1zkc8RnNuFucF6T8Ubm1nPaNPZcl7EmjIRjWTfoPpR6S6QfUG+fmWzlQZEvzLZuELnOCfDQIeZ0p5Qpdfc6DbdysPk++Zrtub0jBFVl+psJ4q2KR0x3tl+yyYdz7XsVhlCzBJbysQh4I3Y6mIdub4cKgFoqPG3MYdkHlEeJe12WQjw3RjrEsAiDwWGfj7rSzhiQzxMHxjcvtT5y+W7yzZwAXE6ZqObJB+xu2NANh88m8RNHCcJ6N4Qcm5b9i7caSlD2WHPtT8BUfxLOeJ4KJf1huOYH7NwsMRb0bsbTuw3LT4IjT9bhkrYAwnmDP/KRQrCKB5WXSMnBhLwQFnVeEytIty0daoIWwiBGiQOaEroaxXuvqhOLRWAUfyaSix0SsBTkttZ7QlIpRG4OQPBTMJ+YcqZTySkCo=

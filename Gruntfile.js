@@ -24,9 +24,7 @@ module.exports = function(grunt) {
     //     platform: "OS X 10.9",
     //     version: "7.0"
     }];
-
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
     connect: {
       server: {
         options: {
@@ -38,15 +36,14 @@ module.exports = function(grunt) {
     'saucelabs-jasmine': {
       all: {
         options: {
-          urls: ["http://127.0.0.1:9999/test/SpecRunner.html"],
-          browsers: browsers,
-          build: process.env.TRAVIS_JOB_ID,
+          urls: ["http://127.0.0.1:9999/SpecRunner.html"],
           tunnelTimeout: 5,
-          testname: "wesocket_url",
-          tags: ["master"],
-          sauceConfig: {
-            'video-upload-on-pass': false
-          }
+          build: process.env.TRAVIS_JOB_ID,
+          concurrency: 3,
+          browsers: browsers,
+          testname: "url tests",
+//          sauceConfig: { 'video-upload-on-pass': false },
+          tags: ["master"]
         }
       }
     },
@@ -58,8 +55,8 @@ module.exports = function(grunt) {
     if (key !== "grunt" && key.indexOf("grunt") === 0) grunt.loadNpmTasks(key);
   }
 
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-saucelabs');
-  grunt.registerTask('default', ['connect', 'saucelabs-jasmine']);
+  //grunt.loadNpmTasks('grunt-contrib-connect');
+  //grunt.loadNpmTasks('grunt-saucelabs');
   grunt.registerTask("dev", ["connect", "watch"]);
+  grunt.registerTask("test", ["connect", "saucelabs-jasmine"]);
 };
