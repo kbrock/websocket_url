@@ -53,8 +53,22 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {}
-  });
+
+    coffee: {
+      compile: {
+        files: {
+          'src/websocket_url.js': ['src/websocket_url.coffee']
+//          'spec/websocket_js_spec.js': ['spec/*.coffee']
+        }
+      }
+    },
+    watch: {
+      coffee: {
+        files: ['src/*.coffee'],
+        tasks: 'coffee'
+      }
+    }
+ });
 
   // Loading dependencies
   for (var key in grunt.file.readJSON("package.json").devDependencies) {
@@ -63,6 +77,7 @@ module.exports = function(grunt) {
 
   //grunt.loadNpmTasks('grunt-contrib-connect');
   //grunt.loadNpmTasks('grunt-saucelabs');
-  grunt.registerTask("dev", ["connect", "watch"]);
-  grunt.registerTask("test", ["connect", "saucelabs-jasmine"]);
+  grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.registerTask("dev", ["coffee", "connect", "watch"]);
+  grunt.registerTask("test", ["coffee", "connect", "saucelabs-jasmine"]);
 };

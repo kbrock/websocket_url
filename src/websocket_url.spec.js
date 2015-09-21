@@ -12,6 +12,12 @@ describe("WebsocketUrl", function() {
   it("understands absolute https urls", function() {
     expect(websocketUrl("https://example.com/sub/")).toEqual("wss://example.com/sub/");
   });
+  it("understands wss urls", function() {
+    expect(websocketUrl("wss://example.com/sub/")).toEqual("wss://example.com/sub/");
+  });
+  it("understands ws urls", function() {
+    expect(websocketUrl("ws://example.com/sub/")).toEqual("ws://example.com/sub/");
+  });
   it("understands absolute urls", function() {
     expect(websocketUrl("/funny")).toMatch(/^wss?:\/\/[^\/]*\/funny$/);
   });
