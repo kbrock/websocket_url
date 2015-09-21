@@ -1,16 +1,16 @@
 module.exports = function(grunt) {
     var browsers = [{
         browserName: "firefox",
-        version: "40.0",
-        platform: "Windows 8"
+        platform: "Windows 8",
+        version: "40"
     }, {
         browserName: "chrome",
         platform: "Windows 8",
-        version: "45.0"
+        version: "45"
     }, {
         browserName: "internet explorer",
         platform: "Windows 8",
-        version: "10.0"
+        version: "10"
     }, {
         browserName: "internet explorer",
         platform: "Windows 7",
@@ -23,6 +23,10 @@ module.exports = function(grunt) {
         browserName: "safari",
         platform: "OS X 10.9",
         version: "7.0"
+    }, {
+        browserName: "firefox",
+        platform: "OS X 10.10",
+        version: "40"
     }];
   grunt.initConfig({
     connect: {
@@ -40,7 +44,8 @@ module.exports = function(grunt) {
           tunnelTimeout: 5,
           statusCheckAttempts: 10,
           build: process.env.TRAVIS_JOB_ID,
-          concurrency: 3,
+          concurrency: 4,
+          throttled: 4,
           browsers: browsers,
           testname: "url tests",
           sauceConfig: { 'record-video': false },
