@@ -18,6 +18,10 @@ describe("WebsocketUrl", function() {
   it("understands ws urls", function() {
     expect(websocketUrl("ws://example.com/sub/")).toEqual("ws://example.com/sub/");
   });
+  it("understands schemaless urls", function() {
+    // this will derive the value from the current url. not sure if it is http or https
+    expect(websocketUrl("//example.com/sub/")).toMatch("wss?://example.com/sub/");
+  });
   it("understands absolute urls", function() {
     expect(websocketUrl("/funny")).toMatch(/^wss?:\/\/[^\/]*\/funny$/);
   });
