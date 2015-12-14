@@ -1,16 +1,51 @@
-language: node_js
-node_js:
-- "0.12"
-addons:
-  sauce_connect: true
-# can we call this install
-# can we do sudo: false
-before_script:
-  - npm install -g grunt-cli
+language: ruby
+sudo: false
+rvm: 2.2.3
+script: bundle exec rake
 env:
   global:
-  - secure: Y/0d5+/0Rn4f3/9gdDo4ihbI75Iousn74UGmiDg1HfeX8Mp/Nwj/5ZGgMSLN2Uk0E/3S5F60oV51N7QTvis7nNPc+aPUUpeIuBUoqczvAEraogOFtAh1Lq6GdDhps/09Dx0hpmQ8bkCHrqfULbBpxGjDVRyA+o1PMyiKdTRkhiYunssaRkUKktK4yhmzv2EprV6EMud/+hyYRpZvcs4E+BiCKT3jDk5SdC6is2tWvOyJdM446x03AJzISfTJfb0TC7miC8SaY/O1zkc8RnNuFucF6T8Ubm1nPaNPZcl7EmjIRjWTfoPpR6S6QfUG+fmWzlQZEvzLZuELnOCfDQIeZ0p5Qpdfc6DbdysPk++Zrtub0jBFVl+psJ4q2KR0x3tl+yyYdz7XsVhlCzBJbysQh4I3Y6mIdub4cKgFoqPG3MYdkHlEeJe12WQjw3RjrEsAiDwWGfj7rSzhiQzxMHxjcvtT5y+W7yzZwAXE6ZqObJB+xu2NANh88m8RNHCcJ6N4Qcm5b9i7caSlD2WHPtT8BUfxLOeJ4KJf1huOYH7NwsMRb0bsbTuw3LT4IjT9bhkrYAwnmDP/KRQrCKB5WXSMnBhLwQFnVeEytIty0daoIWwiBGiQOaEroaxXuvqhOLRWAUfyaSix0SsBTkttZ7QlIpRG4OQPBTMJ+YcqZTySkCo=
-  - secure: oBt27UWez3roJgExEu3Fse6/ZfnQeS5DQDIAamv0YZUFBC05/iaX54aZM/sDzdJ0CU5n5TLiuYuIk7O2wd9hhDh6f6OU9LaHrmNLDqlFg54/TmYk2ot3L+wA+GvJzeNBFnx4XupoTzXk8Znp0o+z7m3KbdwOFboRr26WLqwQzlhP3FMK+JOhERVe4b0He6V2C7xa/eigbrRO0/GT35M5iG4XofzewBPBoK51apbwn5XKjjdjAU4EKgmlEMrwN/uPuve+VhLtTUJqpWAwicdmulHv7AcFiUOeRn/U1eieDMkJjWqZCTACpEFJ9D0xgRh3vGbIvUiLL2HIz0xJti1wQxL5wGdUDZWHQVt13EqwNemrjTaL74xlsi8AJaYvtmzq11ZmJaRi4k4Gw2Uko1Ascy2doMPBeX4bug9Lwh2epCmFCxG2MubllBwfY7n3MJiY4S48ZJUHpTmD7jtTHSpYPWdmJ+TkUFbNwXV3PLoSk0vIa63y0pmokEX0mFgmvoLzQ5FKmTU+NatiFZcE3m715Ns5A4H98YZbEBNFK/f/mRtE/DBqXhBSAPTV0OQfwZStKbqNUSzI4ZAG3daN9mD9ciybGZ7gKqWOsVWc/VzohjTSvDR7R3GC6iyklTB8wIbdFxtACqB0BtShrtCJf+tB91oFPl+9Msv5DkB2LVT/hu8=
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - JASMINE_SELENIUM="true"
+    - secure: Uf4iIiVDHgSwCEHKD5hr8RgHkYYTmITONw7jkOPTq7rm/Vrhkm2MGYWz/dH6dfvbZSdDvm7nc0fxckieJtSlHes+Yc+6ctyYW7U3V+wmA6s1VQtdV8EIQqPLXhhboOtu5oyPtqmFAqLSdUX/DIeGQ0X503p47rwpvNLjabQxdr5WJTAAVXBuDSsiwYG2QoTRLSCnb/uNbvzisaAAO/iA988tu9bUWrYifELYCGx+SKoNDIONhL31UYu9K6SxclZ8yDzbr/zK0krqi3K+4f+IjZ7YPzx9taeps7MtIdgmwXr1cxVmtcyk4B9tmO+6LhDg8xmNZptUOgf+hEehTGHNxpICcf+sBioRrd1c+ZHZbqH/yg//Dxko58XlqSSyO1heqQH03lxCioNCHScsl15XyN6ngEs6xZ2IVM8+ZCkyd0cq2BS2q3g4FkOTP1ID43sHXKxN9o6s7VKwJEczfm6/V1YOBjjn+CBMmreefoQ/IYOA5MZ1grpuxdFHErJx+2pvJFd6AVgqv74VlXxcEmk0A4itfTHafb/XZTxuI1j+N/pvxpjEa8aEv2UOIgUAf8ENh2vitkjgcC+/mx+YIUC2EGKB6Jhbw9vWxpbgsQBE32e0cTWCO88p348w4hYg79w18IaU9SWF6reXx44fQc0ZWSzxl/6hcE78/WWzXtoJ8Ic=
+    - secure: jmDOP9qf1Jv+jMfTKLzhsxy5Hg7P8bhgXaJgq+b2+WkCKf+GD6rrJ2QTDVjtQJAziHuaIePiN//coo61YGATqiVzuwTkIWvf0VfnxFXYtMM8sN3RMrCsGP45hvEE7bS0EfTDS9zLy884lPfV53DlusNrqKPu4uftVe/YkIL7te9UAbhgtcxJaPpPn9+oHzuiT/vnyA5TObK4WGRM5CBkumzY9ZvUSICILisWgyCxxGQDGcIqIH1Ms2We4YkfLOR+ETbA4K17g8mHtIkT3EkmgCbQEY6cohqTtaThnVq7Cu2U0Doo7rxk3oloqA1bcFlspvBBRmiuSN5w53hAS4kcJ3kckRGHzUCWO/vjzEXJpeSUw2Ma1WWx2f8DZBlhpVU2lFncSTfs1AnGgTJ0TDG+RqR3pnuV0FSXlwoqjOnqkmH204IX0qivxcgu6UqOfO2ULWHDz1JxD/8ino2/FrSfvO0giCWMDCpkyVQwLC3i5ifZu+LkSD0F9MT1tP+Iu4ir+0GzmCz7MrI/s4kbBHgSFn/X+m1dtjB2u4QClFOpzahV+28EoKlTSvynsxcZZrgVaPWn3+LJ1i5ojpRzBn273JRH1GHfHq+Wb2iVR2Bbtwl3RU+TUFeOgyTVYYGi/XN3g2ZvdKSuDDtYwAJVYVAm7J6Eh0IrOKLghUVbM0hNe1Q=
+addons:
+  sauce_connect:
+  - username: $SAUCE_USERNAME
+  - access_key: $SAUCE_ACCESS_KEY
+matrix:
+  include:
+    - env:
+      - JASMINE_BROWSER="firefox"
+      - SAUCE_OS="Windows 8"
+      - SAUCE_BROWSER_VERSION="40"
+    - env:
+      - JASMINE_BROWSER="chrome"
+      - SAUCE_OS="Windows 8"
+      - SAUCE_BROWSER_VERSION="45"
+    - env:
+      - JASMINE_BROWSER="internet explorer"
+      - SAUCE_OS="Windows 8"
+      - SAUCE_BROWSER_VERSION="10"
+    - env:
+      - JASMINE_BROWSER="internet explorer"
+      - SAUCE_OS="Windows 7"
+      - SAUCE_BROWSER_VERSION="11"
+    - env:
+      - JASMINE_BROWSER="safari"
+      - SAUCE_OS="OS X 10.11"
+      - SAUCE_BROWSER_VERSION="8.1"
+    - env:
+      - JASMINE_BROWSER="safari"
+      - SAUCE_OS="OS X 10.9"
+      - SAUCE_BROWSER_VERSION="7.0"
+    - env:
+      - JASMINE_BROWSER="firefox"
+      - SAUCE_OS="OS X 10.10"
+      - SAUCE_BROWSER_VERSION="40"
+    - env:
+      - JASMINE_BROWSER="phantomjs"
+      - USE_SAUCE=false
+
 notifications:
   email:
     on_success: never

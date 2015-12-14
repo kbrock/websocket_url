@@ -23,7 +23,8 @@ describe("WebsocketUrl", function() {
   });
   it("understands relative urls", function() {
     // NOTE: relative url derived from test suite named: "test/SpecRunner.html"
-    expect(websocketUrl("funny")).toMatch(/^wss?:\/\/[^\/]*\.*\/test\/funny$/);
+    // expect(websocketUrl("funny")).toMatch(/^wss?:\/\/[^\/]*\.*\/test\/funny$/);
+    expect(websocketUrl("funny")).toMatch(/^wss?:\/\/[^\/]*\.*\/funny$/);
   });
   it("understands root urls", function() {
     expect(websocketUrl("/")).toMatch(/^wss?:\/\/[^\/]*\.*\/$/);

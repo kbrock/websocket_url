@@ -1,0 +1,12 @@
+src_dir:
+  - 'src'
+src_files:
+  - 'websocket_url.js'
+stylesheets:
+helpers:
+  - 'helpers/BrowserFlags.js'
+  - 'helpers/defineJasmineUnderTest.js'
+spec_files:
+  - '**/*[Ss]pec.js'
+  - '!npmPackage/**/*'
+spec_dir: src
